@@ -1,4 +1,4 @@
-import withMaterialColors from "../src/index";
+import { withMaterialColors } from "../src/index";
 import postcss from "postcss";
 import tailwindcss from "tailwindcss";
 

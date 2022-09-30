@@ -2,7 +2,7 @@ import { tailwindThemeFromColor } from "./tailwindThemeFromColor";
 import withMaterialSurfaces from "tailwind-material-surfaces";
 import withModeAwareColors from "tailwind-mode-aware-colors";
 
-export default (config, colorsMap) => {
+export const withMaterialColors = (config, colorsMap) => {
   if (colorsMap.primary) {
     const colors = tailwindThemeFromColor(colorsMap);
 
