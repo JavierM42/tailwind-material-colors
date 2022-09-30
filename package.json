@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.0",
-    "tailwind-material-surfaces": "^1.0.2",
+    "tailwind-material-surfaces": "^1.1.0",
     "tailwind-mode-aware-colors": "^1.2.2"
   },
   "peerDependencies": {

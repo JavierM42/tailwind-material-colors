@@ -9,7 +9,7 @@ it("Generates the correct light-mode CSS", () => {
     {
       content: [
         {
-          raw: "bg-primary-light text-on-primary-light bg-green-light/50 mbg-primary-light interactive-mbg-primary-light",
+          raw: "text-on-primary-light bg-green-light/50 bg-primary-light interactive-bg-primary-light",
         },
       ],
     },
@@ -25,12 +25,12 @@ it("Generates the correct light-mode CSS", () => {
 
   expect(utilitiesCSS.replace(/\n|\s|\t/g, "")).toBe(
     `
+      .bg-green-light\\/50 {
+        background-color: rgb(74 103 0 / 0.5)
+      }
       .bg-primary-light {
         --tw-bg-opacity: 1;
         background-color: rgb(192 1 0 / var(--tw-bg-opacity))
-      }
-      .bg-green-light\\/50 {
-        background-color: rgb(74 103 0 / 0.5)
       }
       .text-on-primary-light {
         --tw-text-opacity: 1;
@@ -45,36 +45,34 @@ it("Generates the correct light-mode CSS", () => {
 
   expect(componentsCSS.replace(/\n|\s|\t/g, "")).toBe(
     `
-      .mbg-primary-light {
+      .bg-primary-light {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+      }
+      .interactive-bg-primary-light {
         --tw-bg-opacity: 1;
         background-color: rgb(192 1 0 / var(--tw-bg-opacity));
         --tw-text-opacity: 1;
         color: rgb(255 255 255 / var(--tw-text-opacity))
       }
-      .interactive-mbg-primary-light {
-        --tw-bg-opacity: 1;
-        background-color: rgb(192 1 0 / var(--tw-bg-opacity));
-        --tw-text-opacity: 1;
-        color: rgb(255 255 255 / var(--tw-text-opacity))
-      }
-      .interactive-mbg-primary-light:hover {
+      .interactive-bg-primary-light:hover {
         --tw-bg-opacity: 1;
         background-color: rgb(197 21 20 / var(--tw-bg-opacity))
       }
-      .interactive-mbg-primary-light:active {
+      .interactive-bg-primary-light:active {
         --tw-bg-opacity: 1;
         background-color: rgb(200 32 31 / var(--tw-bg-opacity))
       }
-      .interactive-mbg-primary-light:focus-visible {
+      .interactive-bg-primary-light:focus-visible {
         --tw-bg-opacity: 1;
         background-color: rgb(200 32 31 / var(--tw-bg-opacity))
       }
-      .interactive-mbg-primary-light {
+      .interactive-bg-primary-light {
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms
       }
-      .interactive-mbg-primary-light:disabled {
+      .interactive-bg-primary-light:disabled {
         color: rgb(255 255 255 / 0.38);
         background-color: rgb(255 255 255 / 0.12)
       }
@@ -87,7 +85,7 @@ it("Generates the correct mode-aware CSS", () => {
     {
       content: [
         {
-          raw: "bg-primary text-on-primary bg-green/50 mbg-primary interactive-mbg-primary",
+          raw: "text-on-primary bg-green/50 bg-primary interactive-bg-primary",
         },
       ],
     },
@@ -116,12 +114,12 @@ it("Generates the correct mode-aware CSS", () => {
 
   expect(utilitiesCSS.replace(/\n|\s|\t/g, "")).toBe(
     `
+      .bg-green\\/50 {
+        background-color: rgb(var(--color-green) / 0.5)
+      }
       .bg-primary {
         --tw-bg-opacity: 1;
         background-color: rgb(var(--color-primary) / var(--tw-bg-opacity))
-      }
-      .bg-green\\/50 {
-        background-color: rgb(var(--color-green) / 0.5)
       }
       .text-on-primary {
         --tw-text-opacity: 1;
@@ -136,36 +134,34 @@ it("Generates the correct mode-aware CSS", () => {
 
   expect(componentsCSS.replace(/\n|\s|\t/g, "")).toBe(
     `
-      .mbg-primary {
+      .bg-primary {
+        --tw-text-opacity: 1;
+        color: rgb(var(--color-on-primary) / var(--tw-text-opacity))
+      }
+      .interactive-bg-primary {
         --tw-bg-opacity: 1;
         background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
         --tw-text-opacity: 1;
         color: rgb(var(--color-on-primary) / var(--tw-text-opacity))
       }
-      .interactive-mbg-primary {
-        --tw-bg-opacity: 1;
-        background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
-        --tw-text-opacity: 1;
-        color: rgb(var(--color-on-primary) / var(--tw-text-opacity))
-      }
-      .interactive-mbg-primary:hover {
+      .interactive-bg-primary:hover {
         --tw-bg-opacity: 1;
         background-color: rgb(var(--color-primary-hover) / var(--tw-bg-opacity))
       }
-      .interactive-mbg-primary:active {
+      .interactive-bg-primary:active {
         --tw-bg-opacity: 1;
         background-color: rgb(var(--color-primary-press) / var(--tw-bg-opacity))
       }
-      .interactive-mbg-primary:focus-visible {
+      .interactive-bg-primary:focus-visible {
         --tw-bg-opacity: 1;
         background-color: rgb(var(--color-primary-focus) / var(--tw-bg-opacity))
       }
-      .interactive-mbg-primary {
+      .interactive-bg-primary {
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms
       }
-      .interactive-mbg-primary:disabled {
+      .interactive-bg-primary:disabled {
         color: rgb(var(--color-on-primary) / 0.38);
         background-color: rgb(var(--color-on-primary) / 0.12)
       }

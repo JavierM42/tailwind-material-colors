@@ -13,8 +13,8 @@ export const withMaterialColors = (config, colorsMap) => {
           theme: { ...(config.theme || {}), colors },
         },
         {
-          surfacePrefix: "mbg",
-          interactiveSurfacePrefix: "interactive-mbg",
+          surfacePrefix: "bg",
+          interactiveSurfacePrefix: "interactive-bg",
         }
       )
     );
