@@ -18,7 +18,12 @@ export const tailwindThemeFromColor = (colorsMap) => {
   const lightScheme = Scheme.light(source);
   const darkScheme = Scheme.dark(source);
 
-  const colors = {};
+  const colors = {
+    transparent: "transparent",
+    current: "currentColor",
+    black: "#000000",
+    white: "#ffffff",
+  };
 
   Object.keys(lightScheme.props).forEach((colorName) => {
     if (!["shadow", "scrim"].includes(colorName)) {
