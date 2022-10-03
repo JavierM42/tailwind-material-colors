@@ -25,8 +25,8 @@ require('tailwind-material-colors')({
   secondary: '#ffff00',
   tertiary: '#0000ff',
   // extra named colors may also be included
-  blue: '#00ff00'
-  green: '#0000ff'
+  green: '#00ff00'
+  blue: '#0000ff'
 });
 ```
 
