@@ -32,6 +32,8 @@ require('tailwind-material-colors')({
 
 > The colors you supply will be transformed by M3. In the example configuration above, where the provided `primary` _base_ color is pure red (`#ff0000`), the resulting `primary` colors are `#c00100` and `#ffb4a8` for light and dark mode respectively, which are different shades of red. This is an intentional effect of the M3 algorithm in the interest of good contrast ratios and pleasing aesthetics.
 
+If you don't want a color to be _harmonized_ to the primary color, pass `{ hex: "#xxxxxx", harmonize: false }` as the value.
+
 ## What does all this get me?
 
 ### 1. A Tailwind color palette.

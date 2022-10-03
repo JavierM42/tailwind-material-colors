@@ -34,9 +34,14 @@ export const tailwindThemeFromColor = (colorsMap) => {
   });
 
   Object.keys(extraColors).forEach((colorName) => {
+    const value = extraColors[colorName];
+
+    const hex = typeof value === "string" ? value : value.hex;
+    const blend = value === hex ? true : value.harmonize;
+
     const { light, dark } = customColor(source, {
-      value: argbFromHex(extraColors[colorName]),
-      blend: true,
+      value: argbFromHex(hex),
+      blend,
     });
     const kebabName = kebabize(colorName);
 
