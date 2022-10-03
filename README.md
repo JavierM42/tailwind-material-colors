@@ -47,7 +47,7 @@ The generated colors are:
 - Tertiary: `tertiary`, `on-tertiary`, `tertiary-container`, `on-tertiary-container`.
 - Error: `error`, `on-error`, `error-container`, `on-error-container`.
 - Background: `background`, `on-background`
-- Surface: `surface`, `on-surface`, `surface-variant`, `on-surface-variant`.
+- Surface: `surface`, `on-surface`, `surface-variant`, `on-surface-variant`, `inverse-surface`, `on-inverse-surface`.
 - Outline: `outline`.
 - Pure `white` and `black`.
 - `transparent` and `current`.
@@ -56,9 +56,9 @@ The generated colors are:
 
 Setting the background color will also set the default text color to its `on-` counterpart.
 
-For example, if you use `bg-primary`, that will automatically apply `text-on-primary`. If you need to overwrite the text color, you can do so as usual.
+For example, if you use `bg-primary`, that will automatically apply `text-on-primary`. If you need to overwrite the text color, you can do so as usual with `text-`.
 
-> This will not work with opacity modifiers (such as `bg-primary/50`). You can specify text color or use `bg-primary bg-opacity-50` instead.
+> Default content color will not be set when using opacity modifiers (such as `bg-primary/50`). You can specify text color or use `bg-primary bg-opacity-50` instead.
 
 ### 2. Automatic dark mode.
 
