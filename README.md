@@ -50,8 +50,7 @@ The generated colors are:
 - Background: `background`, `on-background`
 - Surface: `surface`, `on-surface`, `surface-variant`, `on-surface-variant`, `inverse-surface`, `on-inverse-surface`.
 - Outline: `outline`.
-- Pure `white` and `black`.
-- `transparent` and `current`.
+- Some basic that do not depend on the theme: `white`, `black`, `transparent` and `current`.
 
 ### 1.1 The `bg-` utilties add default content color.
 
