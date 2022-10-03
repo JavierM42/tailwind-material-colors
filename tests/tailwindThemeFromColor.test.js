@@ -30,7 +30,7 @@ it("Returns a tailwind color theme for a base color", () => {
       "outline-light": expect.stringContaining("#"),
       "outline-variant-light": expect.stringContaining("#"),
       "inverse-surface-light": expect.stringContaining("#"),
-      "inverse-on-surface-light": expect.stringContaining("#"),
+      "on-inverse-surface-light": expect.stringContaining("#"),
       "inverse-primary-light": expect.stringContaining("#"),
       "primary-dark": expect.stringContaining("#"),
       "on-primary-dark": expect.stringContaining("#"),
@@ -57,7 +57,7 @@ it("Returns a tailwind color theme for a base color", () => {
       "outline-dark": expect.stringContaining("#"),
       "outline-variant-dark": expect.stringContaining("#"),
       "inverse-surface-dark": expect.stringContaining("#"),
-      "inverse-on-surface-dark": expect.stringContaining("#"),
+      "on-inverse-surface-dark": expect.stringContaining("#"),
       "inverse-primary-dark": expect.stringContaining("#"),
     })
   );

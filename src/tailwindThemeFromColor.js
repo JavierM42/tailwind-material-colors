@@ -18,6 +18,13 @@ export const tailwindThemeFromColor = (colorsMap) => {
   const lightScheme = Scheme.light(source);
   const darkScheme = Scheme.dark(source);
 
+  // fix inverse-on-surface which should be named on-inverse-surface
+  lightScheme.props["onInverseSurface"] = lightScheme.props.inverseOnSurface;
+  delete lightScheme.props.inverseOnSurface;
+  darkScheme["onInverseSurface"] = darkScheme.props.inverseOnSurface;
+  delete darkScheme.props.inverseOnSurface;
+
+  // default colors
   const colors = {
     transparent: "transparent",
     current: "currentColor",
