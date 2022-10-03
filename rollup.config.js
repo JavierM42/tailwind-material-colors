@@ -4,19 +4,37 @@ import { terser } from "rollup-plugin-terser";
 
 const packageJson = require("./package.json");
 
-export default {
-  input: "src/index.js",
-  output: [
-    {
-      file: packageJson.main,
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: packageJson.module,
-      format: "esm",
-      sourcemap: true,
-    },
-  ],
-  plugins: [resolve(), commonjs(), terser()],
-};
+export default [
+  {
+    input: "src/index.js",
+    output: [
+      {
+        file: packageJson.main,
+        format: "cjs",
+        sourcemap: true,
+      },
+      {
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+      },
+    ],
+    plugins: [resolve(), commonjs(), terser()],
+  },
+  {
+    input: "src/updateTheme.js",
+    output: [
+      {
+        file: "lib/updateTheme.min.cjs",
+        format: "cjs",
+        sourcemap: true,
+      },
+      {
+        file: "lib/updateTheme.esm.js",
+        format: "esm",
+        sourcemap: true,
+      },
+    ],
+    plugins: [resolve(), commonjs(), terser()],
+  },
+];
