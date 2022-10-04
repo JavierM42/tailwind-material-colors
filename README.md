@@ -1,3 +1,5 @@
+**Don't use this boring doc, read the [interactive docs](https://tailwind-material-colors-docs.vercel.app/) instead.**
+
 # tailwind-material-colors
 
 Generate and use Material Design 3 color themes with TailwindCSS.
@@ -5,8 +7,9 @@ Generate and use Material Design 3 color themes with TailwindCSS.
 - ✅ Generate a color theme from one, two or three base colors.
 - ✅ Automatic dark mode, no need to use the `dark:` variant.
 - ✅ Easy and consistent interaction states (hover, press, focus, disabled) with `interactive-bg-`.
-- ✅ Extra colors will be harmonized to the primary color (unless disabled).
+- ✅ Extra colors will be harmonized to the primary color (except if specified).
 - ✅ Dynamic Color: update theme dynamically on the client with a single statement of JavaScript.
+
 ## Installation & Usage
 
 ```
@@ -35,7 +38,7 @@ require('tailwind-material-colors')({
 
 If you don't want a color to be _harmonized_ to the primary color, pass `{ hex: "#xxxxxx", harmonize: false }` as the value instead of the plain hex color.
 
-## What does all this get me?
+## What do I get?
 
 ### 1. A Tailwind color palette.
 
