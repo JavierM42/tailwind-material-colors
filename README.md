@@ -17,8 +17,11 @@ npm install --save-dev tailwind-material-colors
 ```
 
 ### `tailwind.config.js`
+
 ```js
-require('tailwind-material-colors')({
+const { withMaterialColors } = require('tailwind-material-colors');
+
+module.exports = withMaterialColors({
   // Here, your tailwind config.
   // (Do not specify theme.colors or theme.extend.colors as they will be overwritten).
 }, {
@@ -73,7 +76,7 @@ This plugin provides easy to use interaction states that follow the [M3 guidelin
 
 For example, `interactive-bg-primary` will apply an 8% overlay of the `on-primary` color to the background when the component is hovered, and a 12% overlay when focused or pressed. It will also apply a disabled state.
 
-The interaction colors are available if you need to apply them manually with `-hover`, `-press`, `-focus`, and `-drag` suffixes.  Since drag states cannot be handled with CSS, if you implement dragging on a `bg-primary` element, you'd apply the `bg-primary-drag` class where needed.
+The interaction colors are available if you need to apply them manually with `-hover`, `-press`, `-focus`, and `-drag` suffixes. Since drag states cannot be handled with CSS, if you implement dragging on a `bg-primary` element, you'd apply the `bg-primary-drag` class where needed.
 
 ## Dynamic Color
 
@@ -85,17 +88,20 @@ You can update the generated theme at runtime, directly on client-side JavaScrip
 import { updateTheme } from "tailwind-material-colors/lib/updateTheme.esm";
 
 const makeThemeRed = () => {
-  updateTheme({
-    // set a new primary color (and optionally any other colors in your theme)
-    primary: '#ff0000',
-    green: '#00ff00'
-  },
-  'media' // your chosen tailwind dark mode strategy (usually 'media' or 'class')
-  )
-}
+  updateTheme(
+    {
+      // set a new primary color (and optionally any other colors in your theme)
+      primary: "#ff0000",
+      green: "#00ff00",
+    },
+    "media" // your chosen tailwind dark mode strategy (usually 'media' or 'class')
+  );
+};
 ```
 
 - It's recommended to set all colors when changing `primary` because the _harmonize_ feature (on by default) will affect the resulting shades.
 - `updateTheme` can't create new colors, only update existing ones.
 
 > ⚠️ The updateTheme function is around 100KB. If possible, load it asynchronously to reduce load times.
+
+<!-- TODO interactive text -->
