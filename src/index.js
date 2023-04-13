@@ -22,3 +22,5 @@ export const withMaterialColors = (config, colorsMap) => {
     throw "A primary color must be specified";
   }
 };
+
+// TODO numbered surface colors
