@@ -2,15 +2,33 @@ import { tailwindThemeFromColor } from "./tailwindThemeFromColor";
 import withMaterialSurfaces from "tailwind-material-surfaces";
 import withModeAwareColors from "tailwind-mode-aware-colors";
 
-export const withMaterialColors = (config, colorsMap) => {
+export const withMaterialColors = (
+  config,
+  colorsMap,
+  options = { extend: false }
+) => {
   if (colorsMap.primary) {
-    const colors = tailwindThemeFromColor(colorsMap);
+    const materialColors = tailwindThemeFromColor(colorsMap);
 
     return withModeAwareColors(
       withMaterialSurfaces(
         {
           ...config,
-          theme: { ...(config.theme || {}), colors },
+          theme: options.extend
+            ? {
+                ...(config.theme || {}),
+                extend: {
+                  ...(config.theme?.extend || {}),
+                  colors: {
+                    ...(config.theme?.extend?.colors || {}),
+                    ...materialColors,
+                  },
+                },
+              }
+            : {
+                ...(config.theme || {}),
+                colors: { ...(config.theme?.colors || {}), ...materialColors },
+              },
         },
         {
           surfacePrefix: "bg",

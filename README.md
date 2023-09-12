@@ -21,13 +21,12 @@ npm install --save-dev tailwind-material-colors
 ```js
 const { withMaterialColors } = require('tailwind-material-colors');
 
-const theme = {
+const config = {
   // Here, your tailwind config.
-  // (Do not specify theme.colors or theme.extend.colors as they will be overwritten).
   ...
-}
+};
 
-module.exports = withMaterialColors(theme , {
+module.exports = withMaterialColors(config, {
   // Here, your base colors as HEX values
   // primary is required
   primary: '#ff0000',
@@ -80,6 +79,16 @@ This plugin provides easy to use interaction states that follow the [M3 guidelin
 For example, `interactive-bg-primary` will apply an 8% overlay of the `on-primary` color to the background when the component is hovered, and a 12% overlay when focused or pressed. It will also apply a disabled state.
 
 The interaction colors are available if you need to apply them manually with `-hover`, `-press`, `-focus`, and `-drag` suffixes. Since drag states cannot be handled with CSS, if you implement dragging on a `bg-primary` element, you'd apply the `bg-primary-drag` class where needed.
+
+## Plugin configuration
+
+### Extending the Tailwind color palette
+
+The plugin will add colors to the `theme.colors` key of your Tailwind config. Any custom colors already defined there will remain if there are no name conflicts, but as per the Tailwind docs, this disables the default Tailwind color palette. If you wish to keep it, add `{ extend: true }` as a third argument to the `withMaterialColors` call.
+
+```
+module.exports = withMaterialColors(config, colors, { extend: true });
+```
 
 ## Dynamic Color
 

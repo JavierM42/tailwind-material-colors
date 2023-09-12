@@ -104,7 +104,8 @@ it("Generates the correct mode-aware CSS", () => {
   );
   expect(baseCSS.replace(/\n|\s|\t/g, "")).toContain(
     `${DARK_SELECTOR} {
-    --color-primary: 255 180 168;
+      html {
+        --color-primary: 255 180 168;
   `.replace(/\n|\s|\t/g, "")
   );
 
