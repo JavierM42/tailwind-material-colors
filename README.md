@@ -21,10 +21,13 @@ npm install --save-dev tailwind-material-colors
 ```js
 const { withMaterialColors } = require('tailwind-material-colors');
 
-module.exports = withMaterialColors({
+const theme = {
   // Here, your tailwind config.
   // (Do not specify theme.colors or theme.extend.colors as they will be overwritten).
-}, {
+  ...
+}
+
+module.exports = withMaterialColors(theme , {
   // Here, your base colors as HEX values
   // primary is required
   primary: '#ff0000',
