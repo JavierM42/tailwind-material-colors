@@ -73,8 +73,8 @@ it("Generates the correct light-mode CSS", () => {
         transition-duration: 150ms
       }
       .interactive-bg-primary-light:disabled {
-        color: rgb(255 255 255 / 0.38);
-        background-color: rgb(255 255 255 / 0.12)
+        color: rgb(var(--color-on-surface) / 0.38);
+        background-color: rgb(var(--color-on-surface) / 0.12)
       }
     `.replace(/\n|\s|\t/g, "")
   );
@@ -163,8 +163,8 @@ it("Generates the correct mode-aware CSS", () => {
         transition-duration: 150ms
       }
       .interactive-bg-primary:disabled {
-        color: rgb(var(--color-on-primary) / 0.38);
-        background-color: rgb(var(--color-on-primary) / 0.12)
+        color: rgb(var(--color-on-surface) / 0.38);
+        background-color: rgb(var(--color-on-surface) / 0.12)
       }
     `.replace(/\n|\s|\t/g, "")
   );

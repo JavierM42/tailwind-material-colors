@@ -33,6 +33,11 @@ export const withMaterialColors = (
         {
           surfacePrefix: "bg",
           interactiveSurfacePrefix: "interactive-bg",
+          disabledStyles: {
+            textOpacity: 0.38,
+            backgroundOpacity: 0.12,
+            colorName: "on-surface",
+          },
         }
       )
     );
