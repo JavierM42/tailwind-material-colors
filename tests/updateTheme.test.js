@@ -12,7 +12,7 @@ it("Adds expected CSS", () => {
       .getElementById("tailwind-material-colors-dynamic-theme")
       .innerText.replace(/\n|\s|\t/g, "")
   ).toContain(
-    `html {
+    `:root {
     --color-primary: 192 1 0;
   }`.replace(/\n|\s|\t/g, "")
   );

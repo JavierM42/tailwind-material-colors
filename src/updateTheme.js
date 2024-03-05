@@ -6,7 +6,7 @@ const DYNAMIC_THEME_STYLESHEET_ID = "tailwind-material-colors-dynamic-theme";
 export const updateTheme = (colorsMap, darkModeConfig = "media") => {
   let newCSS = "";
 
-  const LIGHT_SELECTOR = "html";
+  const LIGHT_SELECTOR = ":root";
   const DARK_SELECTOR = Array.isArray(darkModeConfig)
     ? darkModeConfig[0] === "class"
       ? darkModeConfig[1] || ".dark"
