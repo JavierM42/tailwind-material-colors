@@ -1,5 +1,4 @@
 import { tailwindThemeFromColor } from "./tailwindThemeFromColor";
-import getInteractionColors from "tailwind-material-surfaces/src/getInteractionColors";
 import Color from "color";
 
 const DYNAMIC_THEME_STYLESHEET_ID = "tailwind-material-colors-dynamic-theme";
@@ -51,77 +50,6 @@ export const updateTheme = (colorsMap, darkModeConfig = "media") => {
             .join(" ")};
           }
         `;
-
-          const lightOnColorName = `on-${lightColorName}`;
-          const darkOnColorName = `on-${darkColorName}`;
-
-          const lightOnColor = colors[lightOnColorName];
-          const darkOnColor = colors[darkOnColorName];
-
-          if (lightOnColor && darkOnColor) {
-            const lightInteractionColors = getInteractionColors(
-              lightColor,
-              lightOnColor
-            );
-            const darkInteractionColors = getInteractionColors(
-              darkColor,
-              darkOnColor
-            );
-
-            newCSS += `
-            ${LIGHT_SELECTOR} {
-              --color-${modeAwareColorName}-hover: ${Color(
-              lightInteractionColors.hover
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-              --color-${modeAwareColorName}-press: ${Color(
-              lightInteractionColors.press
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-              --color-${modeAwareColorName}-focus: ${Color(
-              lightInteractionColors.focus
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-              --color-${modeAwareColorName}-drag: ${Color(
-              lightInteractionColors.drag
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-            }
-            ${DARK_SELECTOR} {
-              --color-${modeAwareColorName}-hover: ${Color(
-              darkInteractionColors.hover
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-              --color-${modeAwareColorName}-press: ${Color(
-              darkInteractionColors.press
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-              --color-${modeAwareColorName}-focus: ${Color(
-              darkInteractionColors.focus
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-              --color-${modeAwareColorName}-drag: ${Color(
-              darkInteractionColors.drag
-            )
-              .rgb()
-              .array()
-              .join(" ")};
-            }`;
-          }
         }
       }
     });

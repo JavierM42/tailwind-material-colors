@@ -8,7 +8,7 @@ Generate and use Material Design 3 color themes with TailwindCSS.
 - ✅ Automatic dark mode, no need to use the `dark:` variant.
 - ✅ Easy and consistent interaction states (hover, press, focus, disabled) with `interactive-bg-`.
 - ✅ Extra colors will be harmonized to the primary color (except if specified).
-- ✅ Dynamic Color: update theme dynamically on the client with a single statement of JavaScript.
+- ✅ Dynamic Color: easily update theme dynamically on the client.
 
 ## Installation & Usage
 
@@ -78,7 +78,7 @@ This plugin provides easy to use interaction states that follow the [M3 guidelin
 
 For example, `interactive-bg-primary` will apply an 8% overlay of the `on-primary` color to the background when the component is hovered, and a 12% overlay when focused or pressed. It will also apply a disabled state.
 
-The interaction colors are available if you need to apply them manually with `-hover`, `-press`, `-focus`, and `-drag` suffixes. Since drag states cannot be handled with CSS, if you implement dragging on a `bg-primary` element, you'd apply the `bg-primary-drag` class where needed.
+For drag states, use JavaScript to apply the `dragged-bg-primary` class instead of `interactive-bg-primary` while the element is being dragged.
 
 ## Plugin configuration
 
@@ -114,6 +114,6 @@ const makeThemeRed = () => {
 - It's recommended to set all colors when changing `primary` because the _harmonize_ feature (on by default) will affect the resulting shades.
 - `updateTheme` can't create new colors, only update existing ones.
 
-> ⚠️ The updateTheme function is around 100KB. If possible, load it asynchronously to reduce load times.
+> ⚠️ The updateTheme function is around 75KB. If possible, load it asynchronously to reduce load times.
 
 <!-- TODO interactive text -->

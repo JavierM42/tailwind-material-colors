@@ -26,17 +26,4 @@ it("Adds expected CSS", () => {
     --color-primary: 255 180 168;
   }`.replace(/\n|\s|\t/g, "")
   );
-
-  expect(
-    document
-      .getElementById("tailwind-material-colors-dynamic-theme")
-      .innerText.replace(/\n|\s|\t/g, "")
-  ).toContain(
-    `html {
-    --color-primary-hover: 197 21 20;
-    --color-primary-press: 200 32 31;
-    --color-primary-focus: 200 32 31;
-    --color-primary-drag: 202 42 41;
-  }`.replace(/\n|\s|\t/g, "")
-  );
 });
