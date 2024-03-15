@@ -65,7 +65,7 @@ it("Generates the correct light-mode CSS", () => {
         --tw-bg-mix-opacity: 1;
         background-color: color-mix(
           var(--tw-bg-mix-method, in srgb),
-          rgb(255 255 255 / var(--tw-bg-mix-opacity)) var(--tw-bg-mix-amount, 0%),
+          rgb(255 255 255 / var(--tw-bg-mix-opacity)) calc(var(--tw-bg-mix-amount, 0) * 1%),
           var(--tw-bg-base)
         );
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -73,13 +73,13 @@ it("Generates the correct light-mode CSS", () => {
         transition-duration: 150ms
       }
       .interactive-bg-primary-light:hover {
-        --tw-bg-mix-amount: 8%
+        --tw-bg-mix-amount: 8
       }
       .interactive-bg-primary-light:active {
-        --tw-bg-mix-amount: 12%
+        --tw-bg-mix-amount: 12
       }
       .interactive-bg-primary-light:focus-visible {
-        --tw-bg-mix-amount: 12%
+        --tw-bg-mix-amount: 12
       }
       .interactive-bg-primary-light:disabled {
         color: rgb(var(--color-on-surface) / 0.38);
@@ -165,7 +165,7 @@ it("Generates the correct mode-aware CSS", () => {
         --tw-bg-mix-opacity: 1;
         background-color: color-mix(
           var(--tw-bg-mix-method, in srgb),
-          rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-bg-mix-opacity))) var(--tw-bg-mix-amount, 0%),
+          rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-bg-mix-opacity))) calc(var(--tw-bg-mix-amount, 0) * 1%),
           var(--tw-bg-base)
         );
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -173,13 +173,13 @@ it("Generates the correct mode-aware CSS", () => {
         transition-duration: 150ms
       }
       .interactive-bg-primary:hover {
-        --tw-bg-mix-amount: 8%
+        --tw-bg-mix-amount: 8
       }
       .interactive-bg-primary:active {
-        --tw-bg-mix-amount: 12%
+        --tw-bg-mix-amount: 12
       }
       .interactive-bg-primary:focus-visible {
-        --tw-bg-mix-amount: 12%
+        --tw-bg-mix-amount: 12
       }
       .interactive-bg-primary:disabled {
         color: rgb(var(--color-on-surface) / 0.38);
