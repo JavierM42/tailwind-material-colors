@@ -3,7 +3,12 @@ import Color from "color";
 
 const DYNAMIC_THEME_STYLESHEET_ID = "tailwind-material-colors-dynamic-theme";
 
-export const updateTheme = (colorsMap, darkModeConfig = "media") => {
+export const updateTheme = (
+  colorsMap,
+  darkModeConfig = "media",
+  scheme = "content",
+  contrast = 0
+) => {
   let newCSS = "";
 
   const LIGHT_SELECTOR = ":root";
@@ -17,7 +22,7 @@ export const updateTheme = (colorsMap, darkModeConfig = "media") => {
 
   if (colorsMap.primary) {
     const { black, white, transparent, current, ...colors } =
-      tailwindThemeFromColor(colorsMap);
+      tailwindThemeFromColor(colorsMap, scheme, contrast);
 
     Object.keys(colors).forEach((lightColorName) => {
       const match = lightColorName.match(

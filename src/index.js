@@ -5,10 +5,14 @@ import withModeAwareColors from "tailwind-mode-aware-colors";
 export const withMaterialColors = (
   config,
   colorsMap,
-  options = { extend: false }
+  options = { scheme: "content", contrast: 0, extend: false }
 ) => {
   if (colorsMap.primary) {
-    const materialColors = tailwindThemeFromColor(colorsMap);
+    const materialColors = tailwindThemeFromColor(
+      colorsMap,
+      options?.scheme || "content",
+      options?.contrast || 0
+    );
 
     return withModeAwareColors({
       ...config,
@@ -45,5 +49,3 @@ export const withMaterialColors = (
     throw "A primary color must be specified";
   }
 };
-
-// TODO numbered surface colors

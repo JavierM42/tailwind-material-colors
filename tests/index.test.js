@@ -30,7 +30,7 @@ it("Generates the correct light-mode CSS", () => {
       }
       .bg-primary-light {
         --tw-bg-opacity: 1;
-        background-color: rgb(192 1 0 / var(--tw-bg-opacity))
+        background-color: rgb(165 1 0 / var(--tw-bg-opacity))
       }
       .text-on-primary-light {
         --tw-text-opacity: 1;
@@ -41,7 +41,7 @@ it("Generates the correct light-mode CSS", () => {
       }
       .bg-primary-light {
         --tw-bg-opacity: 1;
-        --tw-bg-base: rgb(192 1 0 / var(--tw-bg-opacity))
+        --tw-bg-base: rgb(165 1 0 / var(--tw-bg-opacity))
       }
     `.replace(/\n|\s|\t/g, "")
   );
@@ -57,9 +57,9 @@ it("Generates the correct light-mode CSS", () => {
         color: rgb(255 255 255 / var(--tw-text-opacity))
       }
       .interactive-bg-primary-light {
-        background-color: rgb(192 1 0 / var(--tw-bg-opacity));
+        background-color: rgb(165 1 0 / var(--tw-bg-opacity));
         --tw-bg-opacity: 1;
-        --tw-bg-base: rgb(192 1 0 / var(--tw-bg-opacity));
+        --tw-bg-base: rgb(165 1 0 / var(--tw-bg-opacity));
         --tw-text-opacity: 1;
         color: rgb(255 255 255 / var(--tw-text-opacity));
         --tw-bg-mix-opacity: 1;
@@ -109,13 +109,13 @@ it("Generates the correct mode-aware CSS", () => {
 
   expect(baseCSS.replace(/\n|\s|\t/g, "")).toContain(
     `:root {
-    --color-primary: 192 1 0;
+    --color-background: 255 248 246;
   `.replace(/\n|\s|\t/g, "")
   );
   expect(baseCSS.replace(/\n|\s|\t/g, "")).toContain(
     `${DARK_SELECTOR} {
       :root {
-        --color-primary: 255 180 168;
+        --color-background: 33 14 11;
   `.replace(/\n|\s|\t/g, "")
   );
 

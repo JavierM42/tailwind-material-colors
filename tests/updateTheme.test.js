@@ -13,7 +13,7 @@ it("Adds expected CSS", () => {
       .innerText.replace(/\n|\s|\t/g, "")
   ).toContain(
     `:root {
-    --color-primary: 192 1 0;
+    --color-primary: 165 1 0;
   }`.replace(/\n|\s|\t/g, "")
   );
 

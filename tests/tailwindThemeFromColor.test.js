@@ -1,5 +1,18 @@
 import { tailwindThemeFromColor } from "../src/tailwindThemeFromColor";
 
+it("Returns default colors", () => {
+  const theme = tailwindThemeFromColor({ primary: "#ff0000" });
+
+  expect(theme).toEqual(
+    expect.objectContaining({
+      transparent: "transparent",
+      current: "currentColor",
+      black: "#000000",
+      white: "#ffffff",
+    })
+  );
+});
+
 it("Returns a tailwind color theme for a base color", () => {
   const theme = tailwindThemeFromColor({ primary: "#ff0000" });
 
