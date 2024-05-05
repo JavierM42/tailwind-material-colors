@@ -6,7 +6,18 @@ declare module "tailwind-material-colors" {
     [name: string]: string | { hex: string; harmonize: boolean };
   };
 
+  type RandomType = keyof ColorsMap;
+
   type Options = {
+    scheme:
+      | "content"
+      | "expressive"
+      | "fidelity"
+      | "monochrome"
+      | "neutral"
+      | "tonalSpot"
+      | "vibrant";
+    contrast: number;
     extend: boolean;
   };
 
