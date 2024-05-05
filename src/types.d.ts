@@ -6,8 +6,6 @@ declare module "tailwind-material-colors" {
     [name: string]: string | { hex: string; harmonize: boolean };
   };
 
-  type RandomType = keyof ColorsMap;
-
   type Options = {
     scheme:
       | "content"
