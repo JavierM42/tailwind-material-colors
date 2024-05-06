@@ -7,6 +7,15 @@ declare module "tailwind-material-colors" {
   };
 
   type Options = {
+    scheme:
+      | "content"
+      | "expressive"
+      | "fidelity"
+      | "monochrome"
+      | "neutral"
+      | "tonalSpot"
+      | "vibrant";
+    contrast: number;
     extend: boolean;
   };
 
