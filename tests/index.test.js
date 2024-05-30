@@ -1,10 +1,9 @@
 import { withMaterialColors } from "../src/index";
-import postcss from "postcss";
-import tailwindcss from "tailwindcss";
+import generateCss from "./generateCss";
 
 const DARK_SELECTOR = "@media (prefers-color-scheme: dark)";
 
-it("Generates the correct light-mode CSS", () => {
+it("Generates the correct light-mode CSS", async () => {
   const config = withMaterialColors(
     {
       content: [
@@ -19,9 +18,7 @@ it("Generates the correct light-mode CSS", () => {
     }
   );
 
-  let utilitiesCSS = postcss([tailwindcss(config)]).process(
-    "@tailwind utilities"
-  ).css;
+  let utilitiesCSS = await generateCss("@tailwind utilities", config);
 
   expect(utilitiesCSS.replace(/\n|\s|\t/g, "")).toBe(
     `
@@ -46,9 +43,7 @@ it("Generates the correct light-mode CSS", () => {
     `.replace(/\n|\s|\t/g, "")
   );
 
-  let componentsCSS = postcss([tailwindcss(config)]).process(
-    "@tailwind components"
-  ).css;
+  let componentsCSS = await generateCss("@tailwind components", config);
 
   expect(componentsCSS.replace(/\n|\s|\t/g, "")).toBe(
     `
@@ -90,7 +85,7 @@ it("Generates the correct light-mode CSS", () => {
   );
 });
 
-it("Generates the correct mode-aware CSS", () => {
+it("Generates the correct mode-aware CSS", async () => {
   const config = withMaterialColors(
     {
       content: [
@@ -105,7 +100,7 @@ it("Generates the correct mode-aware CSS", () => {
     }
   );
 
-  let baseCSS = postcss([tailwindcss(config)]).process("@tailwind base").css;
+  let baseCSS = await generateCss("@tailwind base", config);
 
   expect(baseCSS.replace(/\n|\s|\t/g, "")).toContain(
     `:root {
@@ -119,9 +114,7 @@ it("Generates the correct mode-aware CSS", () => {
   `.replace(/\n|\s|\t/g, "")
   );
 
-  let utilitiesCSS = postcss([tailwindcss(config)]).process(
-    "@tailwind utilities"
-  ).css;
+  let utilitiesCSS = await generateCss("@tailwind utilities", config);
 
   expect(utilitiesCSS.replace(/\n|\s|\t/g, "")).toBe(
     `
@@ -146,9 +139,7 @@ it("Generates the correct mode-aware CSS", () => {
     `.replace(/\n|\s|\t/g, "")
   );
 
-  let componentsCSS = postcss([tailwindcss(config)]).process(
-    "@tailwind components"
-  ).css;
+  let componentsCSS = await generateCss("@tailwind components", config);
 
   expect(componentsCSS.replace(/\n|\s|\t/g, "")).toBe(
     `

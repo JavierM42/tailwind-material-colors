@@ -1,6 +1,6 @@
 {
   "name": "tailwind-material-colors",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "TailwindCSS Plugin to use the Material 3 Color System with Tailwind",
   "main": "lib/index.min.cjs",
   "module": "lib/index.esm.js",
@@ -14,7 +14,7 @@
   "dependencies": {
     "@material/material-color-utilities": "^0.2.7",
     "tailwind-material-surfaces": "^3.0.2",
-    "tailwind-mode-aware-colors": "1.4.2"
+    "tailwind-mode-aware-colors": "^2.0.2"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
