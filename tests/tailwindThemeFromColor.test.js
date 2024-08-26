@@ -72,6 +72,8 @@ it("Returns a tailwind color theme for a base color", () => {
       "inverse-surface-dark": expect.stringContaining("#"),
       "on-inverse-surface-dark": expect.stringContaining("#"),
       "inverse-primary-dark": expect.stringContaining("#"),
+      "scrim-dark": expect.stringContaining("#"),
+      "scrim-light": expect.stringContaining("#"),
     })
   );
 });

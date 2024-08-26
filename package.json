@@ -1,6 +1,6 @@
 {
   "name": "tailwind-material-colors",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "TailwindCSS Plugin to use the Material 3 Color System with Tailwind",
   "main": "lib/index.min.cjs",
   "module": "lib/index.esm.js",
