@@ -74,6 +74,7 @@ const AllMaterialDynamicColors = {
   "on-error-container": MaterialDynamicColors.onErrorContainer,
 
   scrim: MaterialDynamicColors.scrim,
+  shadow: MaterialDynamicColors.shadow,
 };
 
 /**
