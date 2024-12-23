@@ -4,6 +4,9 @@ import { terser } from "rollup-plugin-terser";
 
 const packageJson = require("./package.json");
 
+/**
+ * @type {import('rollup').RollupOptions}
+ */
 export default [
   {
     input: "src/index.js",
