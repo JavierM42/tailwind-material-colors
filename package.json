@@ -17,7 +17,7 @@
     "tailwind-mode-aware-colors": "^2.0.2"
   },
   "peerDependencies": {
-    "tailwindcss": "^3.0.0"
+    "tailwindcss": "^3.4.17"
   },
   "keywords": [
     "tailwind",
@@ -36,7 +36,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.4.49",
     "rollup": "^4.29.1",
-    "tailwindcss": "^3.0.0"
+    "tailwindcss": "^3.4.17"
   },
   "author": "Javier Morales",
   "type": "module",
