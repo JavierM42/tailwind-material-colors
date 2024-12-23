@@ -1,8 +1,11 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
+import { readFileSync } from "node:fs";
 
-const packageJson = require("./package.json");
+const packageJson = JSON.parse(
+  readFileSync(new URL("./package.json", import.meta.url), "utf-8")
+);
 
 /**
  * @type {import('rollup').RollupOptions}
