@@ -27,18 +27,18 @@ it("Generates the correct light-mode CSS", async () => {
       }
       .bg-primary-light {
         --tw-bg-opacity: 1;
-        background-color: rgb(165 1 0 / var(--tw-bg-opacity))
+        background-color: rgb(165 1 0 / var(--tw-bg-opacity, 1))
       }
       .text-on-primary-light {
         --tw-text-opacity: 1;
-        color: rgb(255 255 255 / var(--tw-text-opacity))
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1))
       }
       .bg-green-light\\/50 {
         --tw-bg-base: rgb(74 103 0 / 0.5)
       }
       .bg-primary-light {
         --tw-bg-opacity: 1;
-        --tw-bg-base: rgb(165 1 0 / var(--tw-bg-opacity))
+        --tw-bg-base: rgb(165 1 0 / var(--tw-bg-opacity, 1))
       }
     `.replace(/\n|\s|\t/g, "")
   );
@@ -49,18 +49,18 @@ it("Generates the correct light-mode CSS", async () => {
     `
       .bg-primary-light {
         --tw-text-opacity: 1;
-        color: rgb(255 255 255 / var(--tw-text-opacity))
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1))
       }
       .interactive-bg-primary-light {
-        background-color: rgb(165 1 0 / var(--tw-bg-opacity));
+        background-color: rgb(165 1 0 / var(--tw-bg-opacity, 1));
         --tw-bg-opacity: 1;
-        --tw-bg-base: rgb(165 1 0 / var(--tw-bg-opacity));
+        --tw-bg-base: rgb(165 1 0 / var(--tw-bg-opacity, 1));
         --tw-text-opacity: 1;
-        color: rgb(255 255 255 / var(--tw-text-opacity));
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1));
         --tw-bg-mix-opacity: 1;
         background-color: color-mix(
           var(--tw-bg-mix-method, in srgb),
-          rgb(255 255 255 / var(--tw-bg-mix-opacity)) calc(var(--tw-bg-mix-amount, 0) * 1%),
+          rgb(255 255 255 / var(--tw-bg-mix-opacity, 1)) calc(var(--tw-bg-mix-amount, 0) * 1%),
           var(--tw-bg-base)
         );
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -123,18 +123,18 @@ it("Generates the correct mode-aware CSS", async () => {
       }
       .bg-primary {
         --tw-bg-opacity: 1;
-        background-color: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity)))
+        background-color: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity, 1)))
       }
       .text-on-primary {
         --tw-text-opacity: 1;
-        color: rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-text-opacity)))
+        color: rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-text-opacity, 1)))
       }
       .bg-green\\/50 {
         --tw-bg-base: rgb(var(--color-green) / 0.5)
       }
       .bg-primary {
         --tw-bg-opacity: 1;
-        --tw-bg-base: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity)))
+        --tw-bg-base: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity, 1)))
       }
     `.replace(/\n|\s|\t/g, "")
   );
@@ -145,18 +145,18 @@ it("Generates the correct mode-aware CSS", async () => {
     `
       .bg-primary {
         --tw-text-opacity: 1;
-        color: rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-text-opacity)))
+        color: rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-text-opacity, 1)))
       }
       .interactive-bg-primary {
-        background-color: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity)));
+        background-color: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity, 1)));
         --tw-bg-opacity: 1;
-        --tw-bg-base: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity)));
+        --tw-bg-base: rgb(var(--color-primary) / var(--opacity-primary, var(--tw-bg-opacity, 1)));
         --tw-text-opacity: 1;
-        color: rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-text-opacity)));
+        color: rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-text-opacity, 1)));
         --tw-bg-mix-opacity: 1;
         background-color: color-mix(
           var(--tw-bg-mix-method, in srgb),
-          rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-bg-mix-opacity))) calc(var(--tw-bg-mix-amount, 0) * 1%),
+          rgb(var(--color-on-primary) / var(--opacity-on-primary, var(--tw-bg-mix-opacity, 1))) calc(var(--tw-bg-mix-amount, 0) * 1%),
           var(--tw-bg-base)
         );
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
