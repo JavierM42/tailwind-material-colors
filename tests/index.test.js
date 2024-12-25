@@ -180,3 +180,31 @@ it("Generates the correct mode-aware CSS", async () => {
     `.replace(/\n|\s|\t/g, "")
   );
 });
+
+it("Correctly handles arbitrary color values", async () => {
+  const tailwindConfig = {
+    content: [{ raw: "bg-[#ff0000] text-[#ff0000]" }],
+  };
+  const config = withMaterialColors(tailwindConfig, {
+    primary: "#ff0000",
+    green: "#00ff00",
+  });
+
+  let utilitiesCSS = await generateCss("@tailwind utilities", config);
+
+  expect(utilitiesCSS).toContain(
+    `
+      .bg-\[\#ff0000\] {
+        background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
+        --tw-bg-opacity: 1;
+    `.replace(/\n|\s|\t/g, "")
+  );
+
+  expect(utilitiesCSS).toContain(
+    `
+      .text-\[\#ff0000\] {
+        --tw-text-opacity: 1;
+        color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
+    `.replace(/\n|\s|\t/g, "")
+  );
+});
